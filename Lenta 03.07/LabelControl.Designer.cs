@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelName = new System.Windows.Forms.Label();
             this.labelPicture = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.labelPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +54,12 @@
             this.labelPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.labelPicture.TabIndex = 1;
             this.labelPicture.TabStop = false;
+            this.labelPicture.MouseHover += new System.EventHandler(this.LabelControl_MouseHover);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // LabelControl
             // 
@@ -71,5 +79,6 @@
 
         public PictureBox labelPicture;
         public Label labelName;
+        private System.Windows.Forms.Timer timer1;
     }
 }
